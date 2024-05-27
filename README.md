@@ -1,8 +1,6 @@
- Organic Chemistry Chatbot
-
+# Organic Chemistry Chatbot
 
 Data is taken from Organic Chemistry: A Tenth Edition by John McMurry which is free to use under CC BY-NC-SA 4.0 license by [OpenStax](https://openstax.org/details/books/organic-chemistry "OpenStax Free Textbook").
-
 
 ## How to Run
 ### Clone the repository
@@ -15,14 +13,12 @@ https://github.com/RiaAyuP/churry
 conda create -n orgchembot python=3.8 -y
 ```
 
-
 ## Techstack
 1. Python
 2. LangChain
 3. Flask
 4. OpenAI
 5. ChromaDB
-
 
 ## References
 1. [LangChain: Chat with Your Data by Harrison Chase in DeepLearning.AI](https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/)
