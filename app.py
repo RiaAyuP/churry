@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from src.helper import load_pdf, text_split, embedding_in_use
+from src.helper import load_pdf, text_split
 from langchain.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate

@@ -18,5 +18,5 @@ extracted_data = load_pdf("data/")
 
 text_chunks = text_split(extracted_data)
 
-vectordb = Chroma.from_documents(documents = text_chunks, embedding = OpenAIEmbeddings, persist_directory = "./chroma")
+vectordb = Chroma.from_documents(documents = text_chunks, embedding = OpenAIEmbeddings(), persist_directory = "./chroma")
 vectordb.persist()
