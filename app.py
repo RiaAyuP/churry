@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from src.helper import load_pdf, text_split
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
@@ -31,7 +31,8 @@ qa=RetrievalQA.from_chain_type(
     chain_type="stuff",
     retriever=vectordb.as_retriever(),
     return_source_documents=True,
-    chain_type_kwargs={"prompt": PROMPT})
+    chain_type_kwargs={"prompt": PROMPT},
+    memory = memory)
 
 @app.route("/")
 def index():
@@ -40,10 +41,19 @@ def index():
 
 @app.route("/get", methods=["GET", "POST"])
 def chat():
+    # clears memory at the start of the chat
+    memory.clear()
+    
     msg = request.form["msg"]
     input = msg
     print(input)
-    result=qa({"query": input})
+    
+    # fetch chat history from memory
+    chat_history = memory.load_memory_variables({})['chat_history']
+
+    # Ensure the correct keys are passed to the QA chain
+    result=qa({"query": input, "chat_history": chat_history})
+
     print("Response : ", result["result"])
     return str(result["result"])
 

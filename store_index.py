@@ -1,5 +1,5 @@
 from src.helper import load_pdf, text_split
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 import os
