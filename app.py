@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 from src.helper import load_pdf, text_split, embedding_in_use
 from langchain.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
@@ -16,7 +17,7 @@ OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
 vectordb = Chroma(
     persist_directory = "./chroma",
-    embedding_function = embeddings,
+    embedding_function = OpenAIEmbeddings(),
 )
 
 PROMPT=PromptTemplate(template=prompt_template, input_variables=["context", "question"])
