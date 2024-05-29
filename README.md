@@ -31,6 +31,18 @@ OPENAI_API_KEY = "YOUR OPENAI KEY"
 ### Download the PDF (or any other PDF you want actually) into the folder 'data'
 Please download the Organic Chemistry: A Tenth Edition by John McMurry PDF file [here](https://openstax.org/details/books/organic-chemistry)
 
+### Run the embedding application
+```bash
+python store_index.py
+```
+Please note that it can take a while if your PDF is large.
+
+### Run the chatbot application
+```bash
+python app.py
+```
+It will open in the local host http://127.0.0.1:8080/ and you can start chatting with your PDF!
+
 ## Techstack
 1. Python
 2. LangChain
