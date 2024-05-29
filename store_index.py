@@ -7,13 +7,6 @@ import os
 load_dotenv()
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
-# initializing ChromaDB
-# if __name__ == "__main__":
-#     load_dotenv()
-#     if os.path.exists("./chroma"):
-#         print("already embedded")
-#         exit(0)
-   
 extracted_data = load_pdf("data/")
 
 text_chunks = text_split(extracted_data)
