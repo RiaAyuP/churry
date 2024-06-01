@@ -17,6 +17,7 @@ conda create -n churry python=3.8 -y
 ```bash
 conda activate churry
 ```
+(or should the file/folder be `./env`?)
 
 ### Install the requirements
 ```bash
