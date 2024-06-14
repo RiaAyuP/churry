@@ -12,12 +12,11 @@ https://github.com/RiaAyuP/churry
 ```
 ### Create a conda environment after opening the repository
 ```bash
-conda create -n churry python=3.8 -y
+conda create -p env python=3.8 -y
 ```
 ```bash
-conda activate churry
+conda activate env
 ```
-(or should the file/folder be `./env`?)
 
 ### Install the requirements
 ```bash
