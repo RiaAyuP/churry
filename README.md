@@ -4,6 +4,10 @@ Data is taken from Organic Chemistry: A Tenth Edition by John McMurry which is f
 
 I am a newbie, so if you find any problems or suggestions about the application, please let me know by mailing me at contact@riaayupramudita.id.
 
+
+![Screenshot](churry_organic_chemistry_chatbot.PNG)
+
+
 ## How to Run
 ### Clone the repository
 Project repo:
